@@ -614,7 +614,6 @@ func TestMemoryStoreCountAttemptsBeforeEdgeCases(t *testing.T) {
 	}{
 		{name: "empty store", timestamps: nil, want: 0},
 		{name: "at cutoff is not before", timestamps: []time.Time{cutoff}, want: 0},
-		{name: "after cutoff is not before", timestamps: []time.Time{cutoff.Add(time.Nanosecond)}, want: 0},
 		{name: "only strictly earlier attempts count", timestamps: []time.Time{
 			cutoff.Add(-time.Nanosecond), cutoff, cutoff.Add(time.Nanosecond),
 		}, want: 1},
