@@ -608,9 +608,9 @@ func TestMemoryStoreHistoryOrdersByIDWhenTimestampsTie(t *testing.T) {
 func TestMemoryStoreCountAttemptsBeforeEdgeCases(t *testing.T) {
 	cutoff := time.Date(2026, time.January, 1, 0, 0, 0, 0, time.UTC)
 	tests := []struct {
-		name      string
+		name       string
 		timestamps []time.Time
-		want      int
+		want       int
 	}{
 		{name: "empty store", timestamps: nil, want: 0},
 		{name: "at cutoff is not before", timestamps: []time.Time{cutoff}, want: 0},
